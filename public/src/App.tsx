@@ -1,6 +1,13 @@
+import { AreaList } from "./features/areas/components/AreaList"
+
 function App() {
   return (
-    <div>Hello world!</div>
+    <div>
+      <h1>Hello world!</h1>
+      <AreaList />
+
+    </div>
+    
   )
 }
 
