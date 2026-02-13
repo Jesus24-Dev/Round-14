@@ -16,6 +16,18 @@ export const areas = [
         title: "Spirit",
         icon: "spirit",
         color: "purple"
+    },
+    {
+        id: "4",
+        title: "Work",
+        icon: "work",
+        color: "orange"
+    },
+    {
+        id: "5",
+        title: "Relations",
+        icon: "relations",
+        color: "red"
     }
 ]
 
