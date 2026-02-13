@@ -67,5 +67,31 @@
             "description": "Strengthen your relationships.",
             "frequency": "Weekly"
         }
+    ],
+    "weights": [
+        {
+            "id": "1",
+            "date": "2024-06-01",
+            "weight": 70,
+            "hoursOfSleep": 7,
+            "energy": 8,
+            "waterIntake": 2
+        },
+        {
+            "id": "2",
+            "date": "2024-06-02",
+            "weight": 69.5,
+            "hoursOfSleep": 6,
+            "energy": 7,
+            "waterIntake": 1.5
+        },
+        {
+            "id": "3",
+            "date": "2024-06-03",
+            "weight": 69,
+            "hoursOfSleep": 8,
+            "energy": 9,
+            "waterIntake": 2.5
+        }
     ]
 }
