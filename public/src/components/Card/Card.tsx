@@ -2,7 +2,7 @@ import { type CardProps } from './Card.types';
 import { baseStyles, colorVariants, iconBgVariants } from './Card.styles';
 
 export const Card = ({ title, icon, color }: CardProps) => {
-  const iconPath = `../../../public/assets/images/${icon}.svg`;
+  const iconPath = `../../assets/images/${icon}.svg`;
 
   return (
     <div className={`${baseStyles.container} ${colorVariants[color] || colorVariants.blue}`}>
