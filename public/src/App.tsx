@@ -1,8 +1,12 @@
 import { HabitPage } from "./pages/HabitPage"
+import { WeightControlPage } from "./pages/WeightControlPage"
 
 function App() {
   return (
-    <HabitPage />
+    <>
+      <HabitPage />
+      <WeightControlPage />
+    </>
   )
 }
 
