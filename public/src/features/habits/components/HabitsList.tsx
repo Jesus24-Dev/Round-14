@@ -1,8 +1,11 @@
+import { useHabit } from "../../../store/habits/useHabit";
 import { useHabits } from "../hooks/useHabits";
 import { type Habits } from "../types/Habits";
 
 export function HabitsList(){
-    const {habits} = useHabits('1')
+    const { areaId} = useHabit()
+
+    const {habits} = useHabits(areaId)
 
     return (
         <div>
