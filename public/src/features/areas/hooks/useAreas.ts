@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import { type Areas } from '../types/Areas'
-import { areas as areasAPI } from '../api/getAreas'
+import { getAreas } from '../api/getAreas'
 
 export const useAreas = () => {
     const [data, setData] = useState<Areas | null>(null);
@@ -8,8 +8,10 @@ export const useAreas = () => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setData({ cards: areasAPI });
-            setIsLoading(false);
+            getAreas().then(retrievedData => {
+                setData({ cards: retrievedData.areas});
+                setIsLoading(false);
+            })
         }, 0); 
 
         return () => clearTimeout(timer);
