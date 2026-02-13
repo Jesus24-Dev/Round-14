@@ -1,11 +1,8 @@
-import { AreaList } from "./features/areas/components/AreaList"
+import { HabitPage } from "./pages/HabitPage"
 
 function App() {
   return (
-    <div>
-      <AreaList />
-    </div>
-    
+    <HabitPage />
   )
 }
 
