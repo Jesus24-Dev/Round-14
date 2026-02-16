@@ -1,0 +1,38 @@
+export const modalStyles = {
+    overlay: {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 1000,
+    },  
+    content: {
+        position: 'relative',
+        background: '#fff',
+        borderRadius: '8px',
+        padding: '20px',
+        width: '400px',
+        maxHeight: '80vh',
+        overflowY: 'auto',
+        boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)',
+    },
+    header: {
+        marginBottom: '15px',
+        fontSize: '1.5em',
+        fontWeight: 'bold',
+    },
+    closeButton: {
+        position: 'absolute',
+        top: '10px',
+        right: '10px',
+        background: 'transparent',
+        border: 'none',
+        fontSize: '1.5em',
+        cursor: 'pointer',
+    },
+};
