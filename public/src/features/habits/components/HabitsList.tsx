@@ -1,18 +1,15 @@
 import { useHabits } from "../hooks/useHabits";
-import { type Habits } from "../types/Habits";
+import { type HabitProps } from "../types/Habits";
+import { HabitCard } from "../../../components/HabitCard";
 
 export function HabitsList({areaId}: {areaId: string}){
     
     const {habits} = useHabits(areaId)
 
     return (
-        <div>
-            {habits?.map((habit: Habits) => (
-                <div key={habit.id}>
-                    <h3>{habit.title}</h3>
-                    <p>{habit.description}</p>
-                    <p>{habit.frequency}</p>
-                </div>
+        <div className="grid grid-cols-3">
+            {habits?.map((habit: HabitProps) => (
+                <HabitCard key={habit.id} {...habit}/>
             ))}
         </div>
     )
