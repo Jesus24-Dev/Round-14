@@ -1,7 +1,10 @@
+import { Grid } from "../components/Grid/Grid"
+import { Sidebar } from "../features/sidebar/components/Sidebar"
+
 export function HomePage(){
     return (
-        <div>
+        <Grid sidebar={<Sidebar />} content={
             <h1>Home page</h1>
-        </div>
+        }/>
     )
 }

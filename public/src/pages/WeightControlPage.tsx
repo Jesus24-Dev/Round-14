@@ -3,6 +3,8 @@ import { Button } from "../components/Button";
 import { ModalForm } from "../features/modalforms/components/ModalForm";
 import { WeightList } from "../features/weights/components/WeightList";
 import { type InputProps } from "../components/Input";
+import { Grid } from "../components/Grid/Grid"
+import { Sidebar } from "../features/sidebar/components/Sidebar"
 
 const weightFormInputs: InputProps[] =[
     { name: "weight", type: "number" },
@@ -20,11 +22,13 @@ export function WeightControlPage(){
     }
 
     return (
-        <div className="container mx-auto p-4">
-            <WeightList />    
-            <Button text="Add Weight" color="primary" type="button" onClick={handleOpenModal} />
-            <ModalForm inputs={weightFormInputs} action="/api/weights" method="POST" title="Add New Weight" isOpen={isOpen} onClose={handleOpenModal}/>
-        </div>
+        <Grid sidebar={<Sidebar />} content={
+            <div className="container mx-auto p-4">
+                <WeightList />    
+                <Button text="Add Weight" color="primary" type="button" onClick={handleOpenModal} />
+                <ModalForm inputs={weightFormInputs} action="/api/weights" method="POST" title="Add New Weight" isOpen={isOpen} onClose={handleOpenModal}/>
+            </div>
+        }/>
            
     )
 }

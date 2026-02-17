@@ -4,6 +4,8 @@ import { HabitsList } from '../features/habits/components/HabitsList';
 import { ModalForm } from '../features/modalforms/components/ModalForm';
 import { Button } from "../components/Button";
 import { type InputProps } from "../components/Input";
+import { Grid } from '../components/Grid/Grid';
+import { Sidebar } from '../features/sidebar/components/Sidebar';
 
 const habitFormInputs: InputProps[] =[
     { name: "title", type: "string" },
@@ -20,12 +22,17 @@ export function HabitDetailPage(){
         setIsOpen(!isOpen)
     }
 
+
+
     return (
-        <div>
+        <Grid sidebar={<Sidebar />} content={
+            <div>
             <h2>Habit Detail Page</h2>
             {areaId ? <HabitsList areaId={areaId} /> : <p>No area ID provided.</p>}
             <Button text="Add Habit" color="primary" type="button" onClick={handleOpenModal} />
             <ModalForm inputs={habitFormInputs} action="/api/habits" method="POST" title="Add New Habit" isOpen={isOpen} onClose={handleOpenModal}/>
         </div>
+        }/>
+
     )
 }
