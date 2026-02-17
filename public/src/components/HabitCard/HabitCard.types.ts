@@ -1,0 +1,1 @@
+export type { HabitProps } from "../../types/habit"
