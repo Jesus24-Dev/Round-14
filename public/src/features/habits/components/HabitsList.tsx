@@ -1,10 +1,8 @@
-import { useHabit } from "../../../store/habits/useHabit";
 import { useHabits } from "../hooks/useHabits";
 import { type Habits } from "../types/Habits";
 
-export function HabitsList(){
-    const { areaId} = useHabit()
-
+export function HabitsList({areaId}: {areaId: string}){
+    
     const {habits} = useHabits(areaId)
 
     return (
