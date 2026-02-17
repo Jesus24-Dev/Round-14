@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {useParams} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 import { HabitsList } from '../features/habits/components/HabitsList';
 import { ModalForm } from '../features/modalforms/components/ModalForm';
 import { Button } from "../components/Button";
@@ -22,7 +22,11 @@ export function HabitDetailPage(){
         setIsOpen(!isOpen)
     }
 
+    const navigate = useNavigate();
 
+    const goBack = () => {
+        navigate('/habits')
+    }
 
     return (
         <Grid sidebar={<Sidebar />} content={
@@ -30,7 +34,8 @@ export function HabitDetailPage(){
             <h2>Habit Detail Page</h2>
             {areaId ? <HabitsList areaId={areaId} /> : <p>No area ID provided.</p>}
             <Button text="Add Habit" color="primary" type="button" onClick={handleOpenModal} />
-            <ModalForm inputs={habitFormInputs} action="/api/habits" method="POST" title="Add New Habit" isOpen={isOpen} onClose={handleOpenModal}/>
+            <Button text="Go Back" color="secondary" type="button" onClick={goBack} />
+            <ModalForm inputs={habitFormInputs} action="/api/habits" method="POST" title="Add New Habit" isOpen={isOpen} onClose={handleOpenModal}/>    
         </div>
         }/>
 
