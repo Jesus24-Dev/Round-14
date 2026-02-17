@@ -1,13 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { baseStyles } from "./SidebarLink.styles";
 import { type SidebarLinkProps } from "./SidebarLink.types";
-import { usePage } from "../../store/pages/usePage";
 
 export function SidebarLink({to, label, icon}: SidebarLinkProps){
 
-    const {updatePage} = usePage();
+    const navigate = useNavigate();
 
     const handleClick = () => {
-        updatePage(to);
+        navigate(to);
     }
 
     return (
