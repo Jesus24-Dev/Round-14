@@ -1,13 +1,14 @@
 import { useAreas } from "../hooks/useAreas";
 import { Card } from "../../../components/Card";
-import { useHabit } from "../../../store/habits/useHabit";
+import { useNavigate } from "react-router-dom";
 
 export function AreaList(){
     const { data, isLoading }  = useAreas();
-    const { updateAreaId } = useHabit();
+
+    const navigate = useNavigate();
 
     const updateArea = (areaId: string) => {
-        updateAreaId(areaId);
+        navigate(`/habit-detail/${areaId}`);
     }
     return(
         <>
