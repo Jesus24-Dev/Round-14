@@ -9,7 +9,6 @@ export function useWeights(){
         const fetchWeights = async () => {
             try {
                 const data = await getWeights();
-                console.log(data)
                 setWeights(data);
             } catch (error) {
                 console.error("Error fetching weights:", error);
