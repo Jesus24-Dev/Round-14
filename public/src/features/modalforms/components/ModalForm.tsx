@@ -5,10 +5,10 @@ import { Button } from "../../../components/Button";
 
 type Props = ModalFormProps & Omit<ModalProps, "children">;
 
-export function ModalForm({inputs, action, method, ...modalProps}: Props) {
+export function ModalForm({inputs, onSubmit, ...modalProps}: Props) {
     return (
         <Modal {...modalProps}>
-            <form action={action} method={method}>
+            <form onSubmit={onSubmit}>
                 {inputs.map((input, index) => (
                     <Input key={index} {...input} />
                 ))}
