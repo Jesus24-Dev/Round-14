@@ -1,8 +1,8 @@
 export interface WeightCardProps {
     id?: string;
-    date: string;
+    date_registered: Date;
     weight: number;
-    hoursOfSleep: number;
+    hours_of_sleep: number;
     energy: number;
-    waterIntake: number;
+    water_intake: number;
 }
