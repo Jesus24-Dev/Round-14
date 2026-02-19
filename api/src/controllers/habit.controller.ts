@@ -4,7 +4,7 @@ import { HabitService } from '../services/habit.service.js';
 const habitService = new HabitService();
 
 export class HabitController {
-    async createWeight(req: Request, res: Response): Promise<void> {
+    async createHabit(req: Request, res: Response): Promise<void> {
             try {
                 const habit = await habitService.createHabit(req.body);
                 res.status(201).json(habit);
