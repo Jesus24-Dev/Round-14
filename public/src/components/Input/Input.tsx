@@ -2,11 +2,11 @@ import { useState } from "react";
 import { type InputProps } from "./Input.types";
 import { baseStyle } from "./Input.styles";
 
-export function Input({name, type, placeholder, disabled}: InputProps){
-    const [value, setValue] = useState("");
+export function Input({name, type, placeholder, disabled, value}: InputProps){
+    const [inputValue, setInputValue] = useState(value || "");
 
     const handleInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(e.target.value)
+        setInputValue(e.target.value)
     }
 
     return (
@@ -16,7 +16,7 @@ export function Input({name, type, placeholder, disabled}: InputProps){
             placeholder={placeholder}
             disabled={disabled}
             style={baseStyle}
-            value={value}
+            value={inputValue}
             onChange={handleInputValue}
         />
     )
