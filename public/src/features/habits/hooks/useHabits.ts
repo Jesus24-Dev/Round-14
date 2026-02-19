@@ -1,17 +1,23 @@
 import {useEffect, useState} from 'react'
 import { getHabits } from '../api/getHabits'
-import { type Habits } from '../types/Habits'
+import { type HabitProps } from '../types/Habits'
 
-export function useHabits(habitId: string){
-    const [habits, setHabits] = useState<Habits[] | null>(null)
+export function useHabits(areaId: string){
+    const [habits, setHabits] = useState<HabitProps[]>([]);
 
     useEffect(() => {
-        getHabits().then((data) => {
-            const filteredHabits = data.filter((habit: Habits) => habit.areaId === habitId)
-            setHabits(filteredHabits)
-        })
+        const fetchHabits = async () => {
+            try {
+                const data = await getHabits(areaId);
+                setHabits(data);
+            } catch (error) {
+                console.error("Error fetching habits:", error);
+            }
+        };
 
-    }, [habitId])
+        fetchHabits();
+    }, [areaId]);
 
-    return {habits}
+    return {habits};
 }
+
